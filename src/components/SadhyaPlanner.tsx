@@ -8,8 +8,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Separator } from "@/components/ui/separator";
 import { Users, Clock, ShoppingCart, Leaf } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import Footer from "@/components/Footer";
 
-const traditionalDishes = [
+// Simplified dish data for basic planner
+const basicDishes = [
   {
     id: "rice",
     name: "Rice (Choru)",
@@ -120,7 +122,7 @@ export default function SadhyaPlanner() {
     const allIngredients: { [key: string]: number } = {};
     
     selectedDishes.forEach(dishId => {
-      const dish = traditionalDishes.find(d => d.id === dishId);
+      const dish = basicDishes.find(d => d.id === dishId);
       if (dish) {
         dish.ingredients.forEach(ingredient => {
           allIngredients[ingredient] = (allIngredients[ingredient] || 0) + guestCount;
@@ -135,7 +137,7 @@ export default function SadhyaPlanner() {
   };
 
   const generateTimeline = () => {
-    const selectedDishDetails = traditionalDishes.filter(dish => 
+    const selectedDishDetails = basicDishes.filter(dish => 
       selectedDishes.includes(dish.id)
     );
 
@@ -192,6 +194,7 @@ export default function SadhyaPlanner() {
             </Button>
           </CardContent>
         </Card>
+        <Footer />
       </div>
     );
   }
@@ -207,13 +210,13 @@ export default function SadhyaPlanner() {
                 Select Your Sadhya Dishes
               </CardTitle>
               <CardDescription className="text-sm md:text-base">
-                Choose from {traditionalDishes.length} traditional dishes for {guestCount} guests
+                Choose from {basicDishes.length} traditional dishes for {guestCount} guests
               </CardDescription>
             </CardHeader>
           </Card>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-            {traditionalDishes.map((dish) => (
+            {basicDishes.map((dish) => (
               <Card 
                 key={dish.id} 
                 className={`cursor-pointer transition-smooth hover:shadow-warm ${
@@ -282,6 +285,7 @@ export default function SadhyaPlanner() {
             </Button>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
@@ -375,6 +379,7 @@ export default function SadhyaPlanner() {
             </Button>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

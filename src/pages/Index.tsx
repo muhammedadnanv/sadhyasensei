@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ChefHat, Leaf, Clock, ShoppingCart, Users, Star, Download, Share, Search, Check } from "lucide-react";
 import EnhancedSadhyaPlanner from "@/components/EnhancedSadhyaPlanner";
 import BananaLeafGuide from "@/components/BananaLeafGuide";
+import Footer from "@/components/Footer";
 import heroImage from "@/assets/sadhya-hero.jpg";
 import spicesImage from "@/assets/kerala-spices.jpg";
 import logoImage from "@/assets/logo.png";
@@ -264,6 +265,9 @@ const Index = () => {
           </Card>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

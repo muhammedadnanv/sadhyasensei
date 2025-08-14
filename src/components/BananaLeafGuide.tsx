@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Info, Leaf } from "lucide-react";
+import Footer from "@/components/Footer";
 
 const leafPlacement = [
   {
@@ -191,6 +192,7 @@ export default function BananaLeafGuide({ onClose }: BananaLeafGuideProps) {
           </Button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

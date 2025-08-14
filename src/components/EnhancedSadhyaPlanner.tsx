@@ -12,6 +12,7 @@ import { Progress } from "@/components/ui/progress";
 import { Users, Clock, ShoppingCart, Leaf, Search, Info, Download, Share, Check, CheckCircle2, Printer } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { traditionalDishes, searchDishes, getDishCategories, getIngredientCategories, type SadhyaDish } from "@/data/dishes";
+import Footer from "@/components/Footer";
 
 interface ShoppingItem {
   ingredient: string;
@@ -306,6 +307,7 @@ export default function EnhancedSadhyaPlanner() {
             </Button>
           </CardContent>
         </Card>
+        <Footer />
       </div>
     );
   }
@@ -485,6 +487,7 @@ export default function EnhancedSadhyaPlanner() {
             </Button>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
@@ -660,6 +663,7 @@ export default function EnhancedSadhyaPlanner() {
             </Button>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
